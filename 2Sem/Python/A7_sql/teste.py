@@ -6,7 +6,7 @@ from os import system
 try:
     # identificações
     server = 'localhost'
-    database = 'petshop'
+    database = 'teste'
     username = 'sa'
     password = '*123456HAS*'
     # Conexão
@@ -28,8 +28,6 @@ while conexao:
     0 - Sair
     1 - Cadastrar Pet
     2 - Listar Pets
-    3 - Editar Pet
-    4 - Excluir Pet
     """)
     escolha = int(input("Escolha: "))
     system("cls")
@@ -52,24 +50,21 @@ while conexao:
                 print("idade deve ser numerico")
             else:
                 print("Cadastro com sucesso!")
-        case 2:
-            lista_dados = []
-            inst_consulta.execute("select * from petshop")
-            data = inst_consulta.fetchall()
+#         case 2:
+#             lista_dados = []
+#             inst_consulta.execute("select * from petshop")
+#             data = inst_consulta.fetchall()
 
-            for dt in data:
-                lista_dados.append(dt)
-            lista_dados = sorted(lista_dados)
+#             for dt in data:
+#                 lista_dados.append(dt)
+#             lista_dados = sorted(lista_dados)
 
-            dados_df = pd.DataFrame.from_records(lista_dados,
-                                                 columns=['Id', 'Tipo', 'Nome', 'Idade'], index='Id')
-            
-            if dados_df.empty:
-                print("Sem dados")
-            else:
-                print(dados_df)
-        case 3:
-
-
-
-    input("Pressione qualquer tecla para continuar")
+#             dados_df = pd.DataFrame.from_records(lista_dados,
+#                                                  columns=['Id', 'Tipo', 'Nome', 'Idade'], index='Id')
+#             # dataframe copia os dados numa planilha virtual (como se fosse um excel)
+#             if dados_df.empty:
+#                 print("Sem dados")
+#             else:
+#                 print(dados_df)
+        
+    input("\nPressione qualquer tecla para continuar")

@@ -10,14 +10,6 @@ try:
     username = 'sa'
     password = '*123456HAS*'
     # Conexão
-    conn = pyodbc.connect('DRIVER={SQL Server};'
-        'SERVER=pets_database.mssql.somee.com;'
-        'DATABASE=pets_database;'
-        'Uid=Vini_dev_SQLLogin_1;'
-        'PWD=kov33gmdsc;'
-        'TrustServerCertificate=True;'
-        'Persist Security Info=False;'
-        'Packet Size=4096;')
     # conn = pyodbc.connect('DRIVER={SQL Server}; SERVER=' + server + ';DATABASE=' + database + ';Uid=' + username + ';PWD=' + password)
     inst_cadastro = conn.cursor()
     inst_consulta = conn.cursor()
